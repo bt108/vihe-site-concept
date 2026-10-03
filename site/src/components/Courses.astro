@@ -15,23 +15,23 @@ const {
   COURSES = org.courses,
 } = Astro.props;
 ---
-<section id="courses" class="bg-paper px-[15px] md:px-10 lg:px-[100px] py-[75px] lg:py-[100px]">
+<section id="courses" class="bg-bg px-[15px] md:px-10 lg:px-[100px] py-[75px] lg:py-[100px]">
   <div class="max-w-[1600px] mx-auto">
     <div class="text-center max-w-[720px] mx-auto mb-10">
       <span class="inline-block text-[12px] font-bold tracking-[0.14em] uppercase text-accent mb-2.5">{COURSES_LABEL}</span>
-      <h2 class="font-head font-semibold text-ink text-[24px] leading-[26px] md:text-[32px] lg:text-[36px] lg:leading-[50px] mb-2.5">{COURSES_TITLE}</h2>
-      <p class="text-body">{COURSES_SUB}</p>
+      <h2 class="font-head font-semibold text-text text-[24px] leading-[26px] md:text-[32px] lg:text-[36px] lg:leading-[50px] mb-2.5">{COURSES_TITLE}</h2>
+      <p class="text-text">{COURSES_SUB}</p>
     </div>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
       {COURSES.map((course) => (
-        <article class="border border-sage rounded-card overflow-hidden bg-surface flex flex-col hover:shadow-lg transition">
-          <img src="/assets/placeholders/card-16x9.svg" width="800" height="450" alt={`${course.title} — VIHE course`} class="w-full aspect-video object-cover bg-mist">
+        <article class="border border-clay rounded-card overflow-hidden bg-surface flex flex-col hover:shadow-lg transition">
+          <img src="/assets/placeholders/card-16x9.svg" width="800" height="450" alt={`${course.title} — VIHE course`} class="w-full aspect-video object-cover bg-bg">
           <div class="p-[22px] flex flex-col gap-2.5 flex-1">
-            <h3 class="font-head text-xl text-ink">{course.title}</h3>
-            <div class="text-[12px] font-bold tracking-[0.08em] uppercase text-body">{course.mode} &nbsp;|&nbsp; By <b class="text-accent">{course.by}</b></div>
+            <h3 class="font-head text-xl text-text">{course.title}</h3>
+            <div class="text-[12px] font-bold tracking-[0.08em] uppercase text-text">{course.mode} &nbsp;|&nbsp; By <b class="text-accent">{course.by}</b></div>
             <p class="text-[15px] flex-1">{course.desc}</p>
-            <div class="flex items-center justify-between gap-3 border-t border-mist pt-3.5 mt-1">
-              <span class="font-extrabold text-lg text-ink">{course.dates}</span>
+            <div class="flex items-center justify-between gap-3 border-t border-bg pt-3.5 mt-1">
+              <span class="font-extrabold text-lg text-text">{course.dates}</span>
               <a href="#contact" class="btn-line">View Course</a>
             </div>
           </div>

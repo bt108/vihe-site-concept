@@ -17,16 +17,16 @@ const {
 const LOGO_URL = '/assets/logo.png';
 const hasLogo = existsSync(new URL('../../public/assets/logo.png', import.meta.url));
 ---
-<header class="sticky top-0 z-50 bg-surface border-b border-cloud">
+<header class="sticky top-0 z-50 bg-surface">
   <div class="flex items-center gap-5 px-[8px] md:px-5 lg:px-[50px] py-3.5 max-w-[1600px] mx-auto">
-    <a href="#" class="flex items-center gap-2.5 font-head font-semibold text-xl text-ink whitespace-nowrap" aria-label={`${BRAND_NAME} home`}>
+    <a href="#" class="flex items-center gap-2.5 font-head font-semibold text-xl text-text whitespace-nowrap" aria-label={`${BRAND_NAME} home`}>
       {hasLogo ? (
         <img src={LOGO_URL} alt={BRAND_NAME} width="162" height="50" class="h-[50px] w-auto max-w-[162px] object-contain" />
       ) : (
-        <span class="w-[38px] h-[38px] rounded-[10px] bg-ink text-white grid place-items-center text-base font-extrabold">{LOGO_MARK}</span>
+        <span class="w-[38px] h-[38px] rounded-[10px] bg-text text-white grid place-items-center text-base font-extrabold">{LOGO_MARK}</span>
       )}
     </a>
-    <nav class="hidden lg:flex gap-[22px] ml-3 text-[15px] font-semibold text-ink" aria-label="Primary">
+    <nav class="hidden lg:flex gap-[22px] ml-3 text-[15px] font-semibold text-text" aria-label="Primary">
       {NAV.map((item) => (
         <a class="hover:text-accent" href={item.href}>{item.label}</a>
       ))}
@@ -34,11 +34,11 @@ const hasLogo = existsSync(new URL('../../public/assets/logo.png', import.meta.u
     <span class="flex-1"></span>
     <a href="#donate" class="btn-solid hidden lg:inline-block">Donate</a>
     <a href="#login" class="btn-line hidden lg:inline-block">Login</a>
-    <button id="menuBtn" class="lg:hidden w-11 h-11 border border-cloud rounded-[10px] bg-surface text-xl text-ink" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+    <button id="menuBtn" class="lg:hidden w-11 h-11 border border-sky rounded-[10px] bg-surface text-xl text-text" aria-label="Open menu" aria-expanded="false">&#9776;</button>
   </div>
-  <div id="mobileMenu" class="hidden lg:hidden border-t border-cloud bg-surface px-[8px] pb-5">
+  <div id="mobileMenu" class="hidden lg:hidden border-t border-sky bg-surface px-[8px] pb-5">
     {NAV.map((item) => (
-      <a class="block py-3 font-semibold border-b border-mist text-ink" href={item.href}>{item.label}</a>
+      <a class="block py-3 font-semibold border-b border-bg text-text" href={item.href}>{item.label}</a>
     ))}
     <div class="flex gap-[15px] pt-4">
       <a href="#donate" class="btn-solid flex-1 text-center">Donate</a>

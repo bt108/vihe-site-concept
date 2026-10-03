@@ -13,12 +13,12 @@ const {
   FEATURED_CTA = 'Apply Now',
 } = Astro.props;
 ---
-<section class="bg-mist px-[15px] md:px-10 lg:px-[100px] py-[75px]">
-  <div class="max-w-[1400px] mx-auto bg-pine rounded-[20px] px-6 py-8 md:p-14">
-    <div class="bg-surface rounded-card p-6 md:p-11 max-w-[640px] border-t-4 border-gold">
-      <h2 class="font-head font-semibold text-ink text-[24px] md:text-[32px] lg:text-[36px] mb-1.5">{FEATURED_TITLE}</h2>
+<section class="bg-bg px-[15px] md:px-10 lg:px-[100px] py-[75px]">
+  <div class="max-w-[1400px] mx-auto bg-primary-dark rounded-[20px] px-6 py-8 md:p-14">
+    <div class="bg-surface rounded-card p-6 md:p-11 max-w-[640px] border-t-4 border-cta">
+      <h2 class="font-head font-semibold text-text text-[24px] md:text-[32px] lg:text-[36px] mb-1.5">{FEATURED_TITLE}</h2>
       <div class="text-accent font-bold mb-3">{FEATURED_SUB}</div>
-      <p class="text-body mb-[22px]">{FEATURED_TEXT}</p>
+      <p class="text-text mb-[22px]">{FEATURED_TEXT}</p>
       <a href="#courses" class="btn-solid inline-block">{FEATURED_CTA}</a>
     </div>
   </div>
