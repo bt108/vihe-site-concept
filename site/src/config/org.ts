@@ -61,6 +61,7 @@ export interface OrgConfig {
   coursesHeader: { label: string; title: string; sub: string };
   courses: OrgCourse[];
   retreatsHeader: { label: string; title: string; sub: string };
+  resourcesHeader: { label: string; title: string; sub: string };
   sevaHeader: { label: string; title: string; sub: string };
   sevaColumns: [OrgSevaColumn, OrgSevaColumn, OrgSevaColumn];
   footerNote: string;
@@ -78,6 +79,7 @@ export const org: OrgConfig = {
     { label: 'Home', href: '#' },
     { label: 'Courses', href: '#courses' },
     { label: 'Retreats', href: '#retreats' },
+    { label: 'Resources', href: '#resources' },
     { label: 'About', href: '#get-started' },
     { label: 'Seva', href: '#news' },
     { label: 'Contact', href: '#contact' },
@@ -176,6 +178,11 @@ export const org: OrgConfig = {
     label: 'Intensives & Retreats',
     title: 'Retreats in Vrindavan & Online',
     sub: 'Step out of routine and study in the dhama — short intensives and guided retreats through the year, in Vrindavan and online.',
+  },
+  resourcesHeader: {
+    label: 'Study Aids',
+    title: 'Resources for Students',
+    sub: 'Recordings, reading lists and study materials that support VIHE courses and retreats — free for students and friends.',
   },
   sevaHeader: {
     label: 'Get Involved',
