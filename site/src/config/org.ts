@@ -60,6 +60,7 @@ export interface OrgConfig {
   contact: { phones: OrgPhone[]; email: string; emailHref: string };
   coursesHeader: { label: string; title: string; sub: string };
   courses: OrgCourse[];
+  retreatsHeader: { label: string; title: string; sub: string };
   sevaHeader: { label: string; title: string; sub: string };
   sevaColumns: [OrgSevaColumn, OrgSevaColumn, OrgSevaColumn];
   footerNote: string;
@@ -76,7 +77,7 @@ export const org: OrgConfig = {
   nav: [
     { label: 'Home', href: '#' },
     { label: 'Courses', href: '#courses' },
-    { label: 'Live Classes', href: '#live-classes' },
+    { label: 'Retreats', href: '#retreats' },
     { label: 'About', href: '#get-started' },
     { label: 'Seva', href: '#news' },
     { label: 'Contact', href: '#contact' },
@@ -88,7 +89,7 @@ export const org: OrgConfig = {
     sub: 'Established in 1987 in Sri Vrindavan Dhama, VIHE offers systematic study of the Gaudiya Vaisnava scriptures alongside deep sadhana and training in preaching — welcoming devotees from around the world.',
     ctas: [
       { label: 'Explore Courses', href: '#courses' },
-      { label: 'Join Live Class', href: '#live-classes' },
+      { label: 'Join a Retreat', href: '#retreats' },
     ],
   },
   contact: {
@@ -171,6 +172,11 @@ export const org: OrgConfig = {
       desc: 'Enter the philosophy of Krsna consciousness step by step, taught in English.',
     },
   ],
+  retreatsHeader: {
+    label: 'Intensives & Retreats',
+    title: 'Retreats in Vrindavan & Online',
+    sub: 'Step out of routine and study in the dhama — short intensives and guided retreats through the year, in Vrindavan and online.',
+  },
   sevaHeader: {
     label: 'Get Involved',
     title: 'Serve at VIHE',

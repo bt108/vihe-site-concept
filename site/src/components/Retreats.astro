@@ -1,64 +1,66 @@
 ---
+import { org } from '../config/org';
+
 interface Props {
-  LIVE_LABEL?: string;
-  LIVE_TITLE?: string;
-  LIVE_SUB?: string;
+  RETREATS_LABEL?: string;
+  RETREATS_TITLE?: string;
+  RETREATS_SUB?: string;
 }
 
 const {
-  LIVE_LABEL = 'Daily & Weekly',
-  LIVE_TITLE = 'Live Classes & Temple Programs',
-  LIVE_SUB = 'Join us in Vrindavan or online — morning Bhagavatam, weekly Gita study, kirtans and seminars through the year.',
+  RETREATS_LABEL = org.retreatsHeader.label,
+  RETREATS_TITLE = org.retreatsHeader.title,
+  RETREATS_SUB = org.retreatsHeader.sub,
 } = Astro.props;
 ---
-<section id="live-classes" class="bg-cream px-[15px] md:px-10 lg:px-[100px] py-[75px] lg:py-[100px]">
+<section id="retreats" class="bg-cream px-[15px] md:px-10 lg:px-[100px] py-[75px] lg:py-[100px]">
   <div class="max-w-[1600px] mx-auto">
     <div class="text-center max-w-[720px] mx-auto mb-10">
-      <span class="inline-block text-[12px] font-bold tracking-[0.14em] uppercase text-accent mb-2.5">{LIVE_LABEL}</span>
-      <h2 class="font-head font-semibold text-ink text-[24px] leading-[26px] md:text-[32px] lg:text-[36px] lg:leading-[50px] mb-2.5">{LIVE_TITLE}</h2>
-      <p class="text-body">{LIVE_SUB}</p>
+      <span class="inline-block text-[12px] font-bold tracking-[0.14em] uppercase text-accent mb-2.5">{RETREATS_LABEL}</span>
+      <h2 class="font-head font-semibold text-ink text-[24px] leading-[26px] md:text-[32px] lg:text-[36px] lg:leading-[50px] mb-2.5">{RETREATS_TITLE}</h2>
+      <p class="text-body">{RETREATS_SUB}</p>
     </div>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
       <article class="border border-sage rounded-card overflow-hidden bg-surface flex flex-col hover:shadow-lg transition">
         <div class="relative">
           <span class="absolute top-3 left-3 bg-gold text-ink text-[11px] font-extrabold tracking-[0.08em] uppercase px-3 py-1.5 rounded-full">Featured</span>
-          <img src="/assets/placeholders/card-16x9.svg" width="800" height="450" alt="Morning Bhagavatam class at VIHE" class="w-full aspect-video object-cover bg-mist">
+          <img src="/assets/placeholders/card-16x9.svg" width="800" height="450" alt="Morning Bhagavatam during a VIHE retreat" class="w-full aspect-video object-cover bg-mist">
         </div>
         <div class="p-[22px] flex flex-col gap-2.5 flex-1">
           <h3 class="font-head text-xl text-ink">Morning Srimad-Bhagavatam</h3>
           <div class="text-[13px] font-bold text-pine">Daily &nbsp;·&nbsp; 8:00 am IST</div>
-          <p class="text-[15px] flex-1">Start the day with Bhagavatam class in the temple — in Vrindavan and streamed online.</p>
+          <p class="text-[15px] flex-1">Begin each retreat day with Bhagavatam class in the temple — in Vrindavan and streamed online.</p>
           <div class="flex items-center justify-between gap-3 border-t border-mist pt-3.5 mt-1">
             <span class="font-extrabold text-lg text-accent">Free</span>
-            <a href="#contact" class="btn-line">View Class</a>
+            <a href="#contact" class="btn-line">View Retreat</a>
           </div>
         </div>
       </article>
       <article class="border border-sage rounded-card overflow-hidden bg-surface flex flex-col hover:shadow-lg transition">
         <div class="relative">
-          <img src="/assets/placeholders/card-16x9.svg" width="800" height="450" alt="Weekly Bhagavad-gita study at VIHE" class="w-full aspect-video object-cover bg-mist">
+          <img src="/assets/placeholders/card-16x9.svg" width="800" height="450" alt="Bhagavad-gita retreat study at VIHE" class="w-full aspect-video object-cover bg-mist">
         </div>
         <div class="p-[22px] flex flex-col gap-2.5 flex-1">
-          <h3 class="font-head text-xl text-ink">Weekly Bhagavad-gita Study</h3>
-          <div class="text-[13px] font-bold text-pine">Every Sunday &nbsp;·&nbsp; 10:30 am IST</div>
-          <p class="text-[15px] flex-1">Verse-by-verse Gita discussion for all levels — join in person or online.</p>
+          <h3 class="font-head text-xl text-ink">Gita Retreat Weekends</h3>
+          <div class="text-[13px] font-bold text-pine">Monthly weekends &nbsp;·&nbsp; Vrindavan</div>
+          <p class="text-[15px] flex-1">Weekend retreats on the Bhagavad-gita for all levels — study, kirtan and parikrama.</p>
           <div class="flex items-center justify-between gap-3 border-t border-mist pt-3.5 mt-1">
             <span class="font-extrabold text-lg text-accent">Free</span>
-            <a href="#contact" class="btn-line">View Class</a>
+            <a href="#contact" class="btn-line">View Retreat</a>
           </div>
         </div>
       </article>
       <article class="border border-sage rounded-card overflow-hidden bg-surface flex flex-col hover:shadow-lg transition">
         <div class="relative">
-          <img src="/assets/placeholders/card-16x9.svg" width="800" height="450" alt="Evening kirtan at VIHE" class="w-full aspect-video object-cover bg-mist">
+          <img src="/assets/placeholders/card-16x9.svg" width="800" height="450" alt="Evening kirtan during a VIHE retreat" class="w-full aspect-video object-cover bg-mist">
         </div>
         <div class="p-[22px] flex flex-col gap-2.5 flex-1">
-          <h3 class="font-head text-xl text-ink">Evening Kirtan</h3>
-          <div class="text-[13px] font-bold text-pine">Every Sunday &nbsp;·&nbsp; 8:00 pm IST</div>
-          <p class="text-[15px] flex-1">Sunday evening kirtan with VIHE students, teachers and guests.</p>
+          <h3 class="font-head text-xl text-ink">Evening Kirtan Retreats</h3>
+          <div class="text-[13px] font-bold text-pine">Monthly &nbsp;·&nbsp; 6:00 pm IST</div>
+          <p class="text-[15px] flex-1">Kirtan-centred retreat evenings with VIHE students, teachers and guests.</p>
           <div class="flex items-center justify-between gap-3 border-t border-mist pt-3.5 mt-1">
             <span class="font-extrabold text-lg text-accent">Free</span>
-            <a href="#contact" class="btn-line">View Class</a>
+            <a href="#contact" class="btn-line">View Retreat</a>
           </div>
         </div>
       </article>
@@ -73,35 +75,35 @@ const {
           <p class="text-[15px] flex-1">Four-day intensive with Pavanesvara Dasa on the cosmology of the Bhagavatam.</p>
           <div class="flex items-center justify-between gap-3 border-t border-mist pt-3.5 mt-1">
             <span class="font-extrabold text-lg text-ink">Feb 2026</span>
-            <a href="#courses" class="btn-line">View Class</a>
+            <a href="#courses" class="btn-line">View Retreat</a>
           </div>
         </div>
       </article>
       <article class="border border-sage rounded-card overflow-hidden bg-surface flex flex-col hover:shadow-lg transition">
         <div class="relative">
-          <img src="/assets/placeholders/card-16x9.svg" width="800" height="450" alt="Bhakti-sastri live sessions at VIHE" class="w-full aspect-video object-cover bg-mist">
+          <img src="/assets/placeholders/card-16x9.svg" width="800" height="450" alt="Bhakti-sastri retreat sessions at VIHE" class="w-full aspect-video object-cover bg-mist">
         </div>
         <div class="p-[22px] flex flex-col gap-2.5 flex-1">
-          <h3 class="font-head text-xl text-ink">Bhakti-sastri Live Sessions</h3>
-          <div class="text-[13px] font-bold text-pine">Mon, Wed, Fri &nbsp;·&nbsp; 11:00 am IST</div>
-          <p class="text-[15px] flex-1">Live online sessions accompanying the winter Bhakti-sastri course.</p>
+          <h3 class="font-head text-xl text-ink">Bhakti-sastri Retreat Sessions</h3>
+          <div class="text-[13px] font-bold text-pine">Winter 2025–26 &nbsp;·&nbsp; Vrindavan</div>
+          <p class="text-[15px] flex-1">Guided retreat sessions accompanying the winter Bhakti-sastri course.</p>
           <div class="flex items-center justify-between gap-3 border-t border-mist pt-3.5 mt-1">
             <span class="font-extrabold text-lg text-ink">Winter 2025–26</span>
-            <a href="#courses" class="btn-line">View Class</a>
+            <a href="#courses" class="btn-line">View Retreat</a>
           </div>
         </div>
       </article>
       <article class="border border-sage rounded-card overflow-hidden bg-surface flex flex-col hover:shadow-lg transition">
         <div class="relative">
-          <img src="/assets/placeholders/card-16x9.svg" width="800" height="450" alt="Monthly seminar at VIHE" class="w-full aspect-video object-cover bg-mist">
+          <img src="/assets/placeholders/card-16x9.svg" width="800" height="450" alt="Parikrama retreat in Vrindavan" class="w-full aspect-video object-cover bg-mist">
         </div>
         <div class="p-[22px] flex flex-col gap-2.5 flex-1">
-          <h3 class="font-head text-xl text-ink">Monthly Guest Seminar</h3>
-          <div class="text-[13px] font-bold text-pine">Monthly &nbsp;·&nbsp; 6:00 pm IST</div>
-          <p class="text-[15px] flex-1">Visiting scholars and senior devotees speak on philosophy, culture and preaching.</p>
+          <h3 class="font-head text-xl text-ink">Parikrama Retreat</h3>
+          <div class="text-[13px] font-bold text-pine">Seasonal &nbsp;·&nbsp; Vrindavan Dhama</div>
+          <p class="text-[15px] flex-1">Walk the holy places with senior devotees — study, kirtan and parikrama combined.</p>
           <div class="flex items-center justify-between gap-3 border-t border-mist pt-3.5 mt-1">
             <span class="font-extrabold text-lg text-accent">Free</span>
-            <a href="#contact" class="btn-line">View Class</a>
+            <a href="#contact" class="btn-line">View Retreat</a>
           </div>
         </div>
       </article>

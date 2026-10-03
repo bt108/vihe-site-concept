@@ -48,8 +48,8 @@ module.exports = {
         peach:  '#2B3F9E',
       },
       fontFamily: {
-        head: ['Epilogue', 'sans-serif'],
-        body: ['Inter Regular', 'Inter', 'sans-serif'],
+        head: ['"Charis SIL"', 'Georgia', 'serif'],
+        body: ['"Charis SIL"', 'Georgia', 'serif'],
       },
       borderRadius: { card: '6px', btn: '4px' },
     },
