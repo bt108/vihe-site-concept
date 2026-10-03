@@ -5,12 +5,14 @@ interface Props {
   HERO_TITLE?: string;
   HERO_SUB?: string;
   HERO_CTAS?: [OrgCta, OrgCta];
+  HERO_IMAGE?: string;
 }
 
 const {
   HERO_TITLE = org.hero.title,
   HERO_SUB = org.hero.sub,
   HERO_CTAS = org.hero.ctas,
+  HERO_IMAGE = org.hero.image,
 } = Astro.props;
 ---
 <section class="hero relative bg-bg overflow-hidden">
@@ -28,7 +30,7 @@ const {
     </div>
     <!-- right image col (~180%, overlapping, cover + fade) -->
     <div class="relative min-h-[380px] lg:min-h-[656px] lg:-mr-[100px]">
-      <img src="/assets/placeholders/hero.svg" width="1200" height="800" alt="Students studying at VIHE in Vrindavan"
+      <img src={HERO_IMAGE} width="1200" height="800" alt="Temples on the Yamuna at Vrindavan at dawn"
            class="absolute inset-0 w-full h-full object-cover">
       <div class="hero-fade absolute inset-0 pointer-events-none"></div>
     </div>

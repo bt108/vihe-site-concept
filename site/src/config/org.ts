@@ -56,7 +56,7 @@ export interface OrgConfig {
   tagline: string;
   taglineSub: string;
   nav: OrgNavLink[];
-  hero: { title: string; sub: string; ctas: [OrgCta, OrgCta] };
+  hero: { title: string; sub: string; ctas: [OrgCta, OrgCta]; image: string };
   contact: { phones: OrgPhone[]; email: string; emailHref: string };
   coursesHeader: { label: string; title: string; sub: string };
   courses: OrgCourse[];
@@ -82,6 +82,8 @@ export const org: OrgConfig = {
     { label: 'Contact', href: '#contact' },
   ],
   hero: {
+    // Per-org re-skins swap this path (file lives in public/assets/).
+    image: '/assets/hero.jpg',
     title: 'Welcome to Vrindavan Institute for Higher Education',
     sub: 'Established in 1987 in Sri Vrindavan Dhama, VIHE offers systematic study of the Gaudiya Vaisnava scriptures alongside deep sadhana and training in preaching — welcoming devotees from around the world.',
     ctas: [
