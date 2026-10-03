@@ -28,11 +28,11 @@ const {
         <a href={HERO_CTAS[1].href} class="btn-line basis-[48%] sm:basis-auto text-center">{HERO_CTAS[1].label}</a>
       </div>
     </div>
-    <!-- right image col (~180%, overlapping, cover + fade) -->
-    <div class="relative min-h-[380px] lg:min-h-[656px] lg:-mr-[100px]">
+    <!-- right image col (~180%, overlapping, cover + fade). Below lg: full-bleed, no fade -->
+    <div class="relative min-h-[380px] -mx-[15px] md:-mx-10 lg:ml-0 lg:min-h-[656px] lg:-mr-[100px]">
       <img src={HERO_IMAGE} width="1200" height="800" alt="Temples on the Yamuna at Vrindavan at dawn"
            class="absolute inset-0 w-full h-full object-cover">
-      <div class="hero-fade absolute inset-0 pointer-events-none"></div>
+      <div class="hero-fade absolute inset-0 pointer-events-none hidden lg:block"></div>
     </div>
   </div>
 </section>
