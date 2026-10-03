@@ -44,12 +44,14 @@ const {
   .hero-fade{background:linear-gradient(270deg,rgb(255 255 255 / 0) 45%,var(--bg) 97%)}
   .hero-wash{background:linear-gradient(270deg,transparent 33%,var(--bg) 50%)}
   .btn-solid{background:var(--primary);color:#fff;font-family:'Charis SIL',Georgia,serif;
-    font-size:14px;font-weight:500;line-height:14px;border-radius:4px;padding:12px 32px}
-  .btn-solid:hover{background:var(--primary-dark)}
+    font-size:14px;font-weight:700;line-height:14px;border-radius:4px;padding:12px 32px;
+    transition:background-color .25s ease,color .25s ease,border-color .25s ease,transform .25s ease,box-shadow .25s ease}
+  .btn-solid:hover{background:var(--primary);filter:brightness(.92);transform:translateY(-1px);box-shadow:0 6px 16px rgb(0 0 0 / .18)}
   .btn-line{border:1px solid var(--primary);color:var(--primary);background:transparent;
-    font-family:'Charis SIL',Georgia,serif;font-size:14px;font-weight:500;line-height:14px;
-    border-radius:4px;padding:12px 32px}
-  .btn-line:hover{background:var(--primary);color:#fff}
+    font-family:'Charis SIL',Georgia,serif;font-size:14px;font-weight:700;line-height:14px;
+    border-radius:4px;padding:12px 32px;
+    transition:background-color .25s ease,color .25s ease,border-color .25s ease,transform .25s ease,box-shadow .25s ease}
+  .btn-line:hover{background:var(--primary);color:#fff;filter:brightness(.92);transform:translateY(-1px);box-shadow:0 6px 16px rgb(0 0 0 / .18)}
   @media(max-width:767px){.hero{min-height:380px}.hero-wash{background:linear-gradient(305deg,transparent 100%,var(--bg) 100%)}}
 </style>
 </head>
