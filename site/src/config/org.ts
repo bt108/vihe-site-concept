@@ -80,8 +80,8 @@ export const org: OrgConfig = {
     { label: 'Courses', href: '#courses' },
     { label: 'Retreats', href: '#retreats' },
     { label: 'Resources', href: '#resources' },
-    { label: 'About', href: '#get-started' },
     { label: 'Seva', href: '#news' },
+    { label: 'About', href: '#get-started' },
     { label: 'Contact', href: '#contact' },
   ],
   hero: {
