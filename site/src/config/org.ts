@@ -214,7 +214,7 @@ export const org: OrgConfig = {
         { label: 'Winter 2025–26 admissions open', href: '#courses' },
         { label: 'Vedic Cosmology, Feb 4–7 2026', href: '#courses' },
         { label: 'Caturmasya 2026 calendar', href: '#courses' },
-        { label: 'New study materials out now', href: '#books' },
+        { label: 'New study materials out now', href: '#courses' },
       ],
     },
   ],
