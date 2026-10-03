@@ -39,7 +39,7 @@ const {
   }
   /* Offline fallback (same metrics; used only if the CDN is unreachable). */
   body{font-family:'Charis SIL',Georgia,'Times New Roman',serif;color:var(--text)}
-  h1,h2,h3,.font-head{font-family:'Charis SIL',Georgia,serif;color:var(--text)}
+  :where(h1,h2,h3,.font-head){font-family:'Charis SIL',Georgia,serif;color:var(--text)}
   .hero{min-height:656px}
   .hero-fade{background:linear-gradient(270deg,rgb(255 255 255 / 0) 45%,var(--bg) 97%)}
   .hero-wash{background:linear-gradient(270deg,transparent 33%,var(--bg) 50%)}
