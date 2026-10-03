@@ -18,7 +18,7 @@ const LOGO_URL = '/assets/logo.png';
 const hasLogo = existsSync(new URL('../../public/assets/logo.png', import.meta.url));
 ---
 <header class="sticky top-0 z-50 bg-surface border-b border-cloud">
-  <div class="flex items-center gap-5 px-[15px] md:px-10 lg:px-[100px] py-3.5 max-w-[1600px] mx-auto">
+  <div class="flex items-center gap-5 px-[8px] md:px-5 lg:px-[50px] py-3.5 max-w-[1600px] mx-auto">
     <a href="#" class="flex items-center gap-2.5 font-head font-semibold text-xl text-ink whitespace-nowrap" aria-label={`${BRAND_NAME} home`}>
       {hasLogo ? (
         <img src={LOGO_URL} alt={BRAND_NAME} width="130" height="40" class="h-[40px] w-auto max-w-[130px] object-contain" />
@@ -36,7 +36,7 @@ const hasLogo = existsSync(new URL('../../public/assets/logo.png', import.meta.u
     <a href="#login" class="btn-line hidden lg:inline-block">Login</a>
     <button id="menuBtn" class="lg:hidden w-11 h-11 border border-cloud rounded-[10px] bg-surface text-xl text-ink" aria-label="Open menu" aria-expanded="false">&#9776;</button>
   </div>
-  <div id="mobileMenu" class="hidden lg:hidden border-t border-cloud bg-surface px-[15px] pb-5">
+  <div id="mobileMenu" class="hidden lg:hidden border-t border-cloud bg-surface px-[8px] pb-5">
     {NAV.map((item) => (
       <a class="block py-3 font-semibold border-b border-mist text-ink" href={item.href}>{item.label}</a>
     ))}
