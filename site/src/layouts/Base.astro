@@ -55,7 +55,7 @@ const {
   @media(max-width:767px){.hero{min-height:380px}.hero-wash{background:linear-gradient(305deg,transparent 100%,var(--bg) 100%)}}
   /* Mobile menu: eased open/close via grid-rows (animates both directions).
      visibility flips after the close motion so links are clickable only when open. */
-  #mobileMenu{display:grid;grid-template-rows:0fr;opacity:0;transform:translateY(-8px);visibility:hidden;transition:grid-template-rows .3s ease,opacity .3s ease,transform .3s ease,visibility 0s linear .3s}
+  #mobileMenu{display:grid;grid-template-rows:0fr;min-height:0;opacity:0;transform:translateY(-8px);visibility:hidden;transition:grid-template-rows .3s ease,opacity .3s ease,transform .3s ease,visibility 0s linear .3s}
   #mobileMenu.open{grid-template-rows:1fr;opacity:1;transform:translateY(0);visibility:visible;transition:grid-template-rows .3s ease,opacity .3s ease,transform .3s ease,visibility 0s}
   #mobileMenu .mobileMenu-inner{overflow:hidden;min-height:0}
   #menuBtn{position:relative}
