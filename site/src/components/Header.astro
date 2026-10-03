@@ -34,15 +34,17 @@ const hasLogo = existsSync(new URL('../../public/assets/logo.png', import.meta.u
     <span class="flex-1"></span>
     <a href="#donate" class="btn-solid hidden lg:inline-block">Donate</a>
     <a href="#login" class="btn-line hidden lg:inline-block">Login</a>
-    <button id="menuBtn" class="lg:hidden w-11 h-11 border border-sky rounded-[10px] bg-surface text-xl text-text" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+    <button id="menuBtn" class="lg:hidden w-11 h-11 border border-sky rounded-[10px] bg-surface text-xl text-text" aria-label="Open menu" aria-expanded="false"><span class="icon-open" aria-hidden="true">&#9776;</span><span class="icon-close" aria-hidden="true">&#10005;</span></button>
   </div>
-  <div id="mobileMenu" class="hidden lg:hidden border-t border-sky bg-surface px-[8px] pb-5">
+  <div id="mobileMenu" class="lg:hidden" aria-hidden="true">
+    <div class="mobileMenu-inner border-t border-sky bg-surface px-[8px] pb-5">
     {NAV.map((item) => (
       <a class="block py-3 font-semibold border-b border-bg text-text" href={item.href}>{item.label}</a>
     ))}
     <div class="flex gap-[15px] pt-4">
       <a href="#donate" class="btn-solid flex-1 text-center">Donate</a>
       <a href="#login" class="btn-line flex-1 text-center">Login</a>
+    </div>
     </div>
   </div>
 </header>

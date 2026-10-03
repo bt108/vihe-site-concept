@@ -53,23 +53,40 @@ const {
     transition:background-color .25s ease,color .25s ease,border-color .25s ease,transform .25s ease,box-shadow .25s ease}
   .btn-line:hover{background:rgb(63 125 43 / .08);background:color-mix(in srgb,var(--primary) 9%,transparent);border-color:var(--primary);color:var(--primary);transform:translateY(-1px)}
   @media(max-width:767px){.hero{min-height:380px}.hero-wash{background:linear-gradient(305deg,transparent 100%,var(--bg) 100%)}}
+  /* Mobile menu: eased open/close via grid-rows (animates both directions).
+     visibility flips after the close motion so links are clickable only when open. */
+  #mobileMenu{display:grid;grid-template-rows:0fr;opacity:0;transform:translateY(-8px);visibility:hidden;transition:grid-template-rows .3s ease,opacity .3s ease,transform .3s ease,visibility 0s linear .3s}
+  #mobileMenu.open{grid-template-rows:1fr;opacity:1;transform:translateY(0);visibility:visible;transition:grid-template-rows .3s ease,opacity .3s ease,transform .3s ease,visibility 0s}
+  #mobileMenu .mobileMenu-inner{overflow:hidden;min-height:0}
+  #menuBtn{position:relative}
+  #menuBtn .icon-close{position:absolute;inset:0;display:grid;place-items:center;opacity:0;transition:opacity .2s ease}
+  #menuBtn .icon-open{transition:opacity .2s ease}
+  #menuBtn.open .icon-open{opacity:0}
+  #menuBtn.open .icon-close{opacity:1}
+  @media (prefers-reduced-motion:reduce){#mobileMenu,#mobileMenu.open,#menuBtn .icon-open,#menuBtn .icon-close{transition:none;transform:none}}
 </style>
 </head>
 
 <body class="bg-bg text-text font-body antialiased">
 <slot />
 <script>
-  // Tiny mobile-menu toggle only.
+  // Mobile menu: class-driven eased open/close (see #mobileMenu CSS).
   (function(){
     var btn = document.getElementById('menuBtn');
     var menu = document.getElementById('mobileMenu');
+    if(!btn || !menu) return;
+    function set(open){
+      menu.classList.toggle('open', open);
+      btn.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      menu.setAttribute('aria-hidden', open ? 'false' : 'true');
+    }
     btn.addEventListener('click', function(){
-      var open = menu.classList.toggle('hidden');
-      btn.setAttribute('aria-expanded', open ? 'false' : 'true');
-      btn.innerHTML = open ? '&#9776;' : '&#10005;';
+      set(!menu.classList.contains('open'));
     });
     menu.addEventListener('click', function(e){
-      if(e.target.tagName === 'A'){ menu.classList.add('hidden'); btn.innerHTML='&#9776;'; }
+      if(e.target.tagName === 'A'){ set(false); }
     });
   })();
 </script>
