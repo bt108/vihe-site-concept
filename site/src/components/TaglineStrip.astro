@@ -1,0 +1,17 @@
+---
+import { org } from '../config/org';
+
+interface Props {
+  TAGLINE?: string;
+  TAGLINE_SUB?: string;
+}
+
+const {
+  TAGLINE = org.tagline,
+  TAGLINE_SUB = org.taglineSub,
+} = Astro.props;
+---
+<div class="bg-ink text-white text-center px-[15px] md:px-10 py-[26px]">
+  <p class="font-head text-[20px] md:text-[24px]">{TAGLINE}</p>
+  <small class="block text-[13px] text-stone mt-1 tracking-wide">{TAGLINE_SUB}</small>
+</div>

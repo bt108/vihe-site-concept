@@ -1,0 +1,11 @@
+# dependencies
+node_modules/
+
+# builds
+dist/
+.astro/
+
+# logs / OS
+npm-debug.log*
+*.log
+.DS_Store

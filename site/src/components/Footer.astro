@@ -1,0 +1,82 @@
+---
+import { org, type OrgPhone } from '../config/org';
+
+interface Props {
+  BRAND_NAME?: string;
+  FOOTER_NOTE?: string;
+  CONTACT_EMAIL?: string;
+  CONTACT_EMAIL_HREF?: string;
+  CONTACT_PHONES?: OrgPhone[];
+  YEAR?: string;
+}
+
+const {
+  BRAND_NAME = org.name,
+  FOOTER_NOTE = org.footerNote,
+  CONTACT_EMAIL = org.contact.email,
+  CONTACT_EMAIL_HREF = org.contact.emailHref,
+  CONTACT_PHONES = org.contact.phones,
+  YEAR = org.year,
+} = Astro.props;
+---
+<footer id="contact" class="bg-primary-dark text-stone">
+  <div class="max-w-[1600px] mx-auto px-[15px] md:px-10 lg:px-[100px] grid sm:grid-cols-2 lg:grid-cols-4 gap-9 pt-[60px] pb-10">
+    <div>
+      <h4 class="text-white text-[13px] tracking-[0.1em] uppercase mb-4">{BRAND_NAME}</h4>
+      <p class="text-[15px]">{FOOTER_NOTE}</p>
+      <p class="text-[15px] mt-3">
+        <a class="hover:text-white hover:underline" href={CONTACT_EMAIL_HREF}>{CONTACT_EMAIL}</a>
+      </p>
+      <ul class="text-[15px] mt-2">
+        {CONTACT_PHONES.map((phone) => (
+          <li class="py-[5px]"><a class="hover:text-white hover:underline" href={phone.href}>{phone.display}</a></li>
+        ))}
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-white text-[13px] tracking-[0.1em] uppercase mb-4">Study</h4>
+      <ul class="text-[15px]">
+        <li class="py-[5px]"><a class="hover:text-white hover:underline" href="#courses">Winter 2025–26</a></li>
+        <li class="py-[5px]"><a class="hover:text-white hover:underline" href="#courses">Caturmasya 2026</a></li>
+        <li class="py-[5px]"><a class="hover:text-white hover:underline" href="#live-classes">Live Classes</a></li>
+        <li class="py-[5px]"><a class="hover:text-white hover:underline" href="#books">Study Materials</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-white text-[13px] tracking-[0.1em] uppercase mb-4">More</h4>
+      <ul class="text-[15px]">
+        <li class="py-[5px]"><a class="hover:text-white hover:underline" href="#get-started">About Us</a></li>
+        <li class="py-[5px]"><a class="hover:text-white hover:underline" href="#news">Offer Seva</a></li>
+        <li class="py-[5px]"><a class="hover:text-white hover:underline" href="#articles">Writings</a></li>
+        <li class="py-[5px]"><a class="hover:text-white hover:underline" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-white text-[13px] tracking-[0.1em] uppercase mb-4">Newsletter</h4>
+      <p class="text-[15px]">Sign up for updates. One email per month, no spam.</p>
+      <form class="flex gap-2 my-3.5" action="#" method="post" onsubmit="return false">
+        <input type="email" placeholder="Email address" aria-label="Email address" required
+               class="flex-1 min-w-0 px-3.5 py-3 rounded-[10px] border border-cta bg-primary-dark text-white placeholder:text-stone text-[15px]">
+        <button type="submit" class="btn-solid">Join</button>
+      </form>
+      <div class="flex gap-2.5" aria-label="Social links">
+        <span class="w-10 h-10 rounded-full bg-primary grid place-items-center font-extrabold text-[13px] text-white">f</span>
+        <span class="w-10 h-10 rounded-full bg-primary grid place-items-center font-extrabold text-[13px] text-white">x</span>
+        <span class="w-10 h-10 rounded-full bg-primary grid place-items-center font-extrabold text-[13px] text-white">in</span>
+        <span class="w-10 h-10 rounded-full bg-primary grid place-items-center font-extrabold text-[13px] text-white">yt</span>
+        <span class="w-10 h-10 rounded-full bg-primary grid place-items-center font-extrabold text-[13px] text-white">ig</span>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-cta">
+    <div class="max-w-[1600px] mx-auto px-[15px] md:px-10 lg:px-[100px] py-5 text-[13px] flex justify-between gap-3 flex-wrap">
+      <span>&copy; {YEAR} {BRAND_NAME}. All rights reserved.</span>
+      <nav class="flex gap-[18px] flex-wrap" aria-label="Legal">
+        <a class="hover:text-white hover:underline" href="#">Terms</a>
+        <a class="hover:text-white hover:underline" href="#">Privacy</a>
+        <a class="hover:text-white hover:underline" href="#">Refund</a>
+        <a class="hover:text-white hover:underline" href="#">Shipping</a>
+      </nav>
+    </div>
+  </div>
+</footer>

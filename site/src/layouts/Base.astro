@@ -1,0 +1,69 @@
+---
+import { org } from '../config/org';
+
+interface Props {
+  BRAND_NAME?: string;
+  HERO_TITLE?: string;
+  HERO_SUB?: string;
+}
+
+const {
+  BRAND_NAME = org.name,
+  HERO_TITLE = org.hero.title,
+  HERO_SUB = org.hero.sub,
+} = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{BRAND_NAME} — {HERO_TITLE}</title>
+<meta name="description" content={HERO_SUB}>
+<style>
+  /* Token vars mirror the Tailwind map (single source; no one-off hexes). */
+  :root{
+    --primary:#3F7D2B; --primary-dark:#4A1C1C; --cta:#E9B04B; --accent:#2B3F9E;
+    --sky:#A9D2EA; --clay:#C48A4F; --bg:#FBF7EC; --surface:#FFFFFF; --text:#1A1A1A;
+    --ink:#1A1A1A; --pine:#4A1C1C; --body:#1A1A1A;
+    --sage:#C48A4F; --mist:#FBF7EC; --cream:#FBF7EC; --bronze:#C48A4F;
+    --gold:#E9B04B; --sand:#FBF7EC; --tint:#FBF7EC; --paper:#FBF7EC;
+    --stone:#C48A4F; --cloud:#A9D2EA; --danger:#2B3F9E; --blush:#A9D2EA;
+    --ember:#4A1C1C; --peach:#2B3F9E;
+  }
+  /* Offline fallback (same metrics; used only if the CDN is unreachable). */
+  body{font-family:'Inter Regular',Inter,sans-serif;color:var(--body)}
+  h1,h2,h3,.font-head{font-family:Epilogue,sans-serif;color:var(--ink)}
+  .hero{min-height:656px}
+  .hero-fade{background:linear-gradient(270deg,transparent 70%,var(--bg) 97%)}
+  .hero-wash{background:linear-gradient(270deg,transparent 33%,var(--bg) 50%)}
+  .btn-solid{background:var(--primary);color:#fff;font-family:Epilogue,sans-serif;
+    font-size:14px;font-weight:500;line-height:14px;border-radius:4px;padding:12px 32px}
+  .btn-solid:hover{background:var(--primary-dark)}
+  .btn-line{border:1px solid var(--primary);color:var(--primary);background:transparent;
+    font-family:Epilogue,sans-serif;font-size:14px;font-weight:500;line-height:14px;
+    border-radius:4px;padding:12px 32px}
+  .btn-line:hover{background:var(--primary);color:#fff}
+  @media(max-width:767px){.hero{min-height:380px}.hero-wash{background:linear-gradient(305deg,transparent 100%,var(--bg) 100%)}}
+</style>
+</head>
+
+<body class="bg-bg text-body font-body antialiased">
+<slot />
+<script>
+  // Tiny mobile-menu toggle only.
+  (function(){
+    var btn = document.getElementById('menuBtn');
+    var menu = document.getElementById('mobileMenu');
+    btn.addEventListener('click', function(){
+      var open = menu.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+      btn.innerHTML = open ? '&#9776;' : '&#10005;';
+    });
+    menu.addEventListener('click', function(e){
+      if(e.target.tagName === 'A'){ menu.classList.add('hidden'); btn.innerHTML='&#9776;'; }
+    });
+  })();
+</script>
+</body>
+</html>

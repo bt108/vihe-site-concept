@@ -1,0 +1,42 @@
+---
+import { org, type OrgSevaColumn } from '../config/org';
+
+interface Props {
+  NEWS_LABEL?: string;
+  NEWS_TITLE?: string;
+  NEWS_SUB?: string;
+  SEVA_COLUMNS?: [OrgSevaColumn, OrgSevaColumn, OrgSevaColumn];
+}
+
+const {
+  NEWS_LABEL = org.sevaHeader.label,
+  NEWS_TITLE = org.sevaHeader.title,
+  NEWS_SUB = org.sevaHeader.sub,
+  SEVA_COLUMNS = org.sevaColumns,
+} = Astro.props;
+
+const cardStyles = [
+  { card: 'bg-surface', rule: 'border-accent', item: 'border-mist', link: 'hover:text-accent' },
+  { card: 'bg-blush', rule: 'border-ember', item: 'border-peach', link: 'hover:text-ember' },
+  { card: 'bg-tint', rule: 'border-bronze', item: 'border-sand', link: 'hover:text-bronze' },
+];
+---
+<section id="news" class="px-[15px] md:px-10 lg:px-[100px] py-[75px] lg:py-[100px] max-w-[1600px] mx-auto">
+  <div class="text-center max-w-[720px] mx-auto mb-10">
+    <span class="inline-block text-[12px] font-bold tracking-[0.14em] uppercase text-accent mb-2.5">{NEWS_LABEL}</span>
+    <h2 class="font-head font-semibold text-ink text-[24px] leading-[26px] md:text-[32px] lg:text-[36px] lg:leading-[50px] mb-2.5">{NEWS_TITLE}</h2>
+    <p class="text-body">{NEWS_SUB}</p>
+  </div>
+  <div class="grid md:grid-cols-3 gap-7">
+    {SEVA_COLUMNS.map((col, i) => (
+      <div class={`border border-sage rounded-card p-7 ${cardStyles[i].card}`}>
+        <h3 class={`font-head text-xl text-ink mb-3.5 pb-3 border-b-2 ${cardStyles[i].rule}`}>{col.heading}</h3>
+        <ul>
+          {col.links.map((link, j) => (
+            <li class={`py-2.5 text-[15px] ${j < col.links.length - 1 ? `border-b ${cardStyles[i].item}` : ''}`}><a class={`${cardStyles[i].link} hover:underline`} href={link.href}>{link.label}</a></li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</section>

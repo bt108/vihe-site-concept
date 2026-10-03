@@ -1,0 +1,31 @@
+---
+interface Props {
+  AUDIO_TITLE?: string;
+  AUDIO_TEXT?: string;
+  COMMUNITY_TITLE?: string;
+  COMMUNITY_TEXT?: string;
+}
+
+const {
+  AUDIO_TITLE = 'Missed a Class?',
+  AUDIO_TEXT = 'Listen to recordings of VIHE courses, seminars and morning classes — free for students and friends.',
+  COMMUNITY_TITLE = 'Come, Serve & Study',
+  COMMUNITY_TEXT = 'Offer seva at VIHE in Vrindavan or support from home — fill the seva form and we will be in touch.',
+} = Astro.props;
+---
+<section class="px-[15px] md:px-10 lg:px-[100px] pb-[75px] lg:pb-[100px] max-w-[1600px] mx-auto">
+  <div class="grid lg:grid-cols-2 gap-7">
+    <div class="rounded-[20px] p-7 md:p-12 text-white bg-accent">
+      <p class="text-[12px] font-bold tracking-[0.14em] uppercase text-sand mb-2">Free Audio</p>
+      <h3 class="font-head text-[26px] md:text-[32px] mb-2.5">{AUDIO_TITLE}</h3>
+      <p class="text-mist mb-[22px] max-w-[26rem]">{AUDIO_TEXT}</p>
+      <a href="#live-classes" class="inline-block bg-white text-pine font-head text-sm font-medium rounded-btn px-8 py-3 hover:bg-cream">Listen Free</a>
+    </div>
+    <div class="rounded-[20px] p-7 md:p-12 text-white bg-primary-dark">
+      <p class="text-[12px] font-bold tracking-[0.14em] uppercase text-gold mb-2">Community</p>
+      <h3 class="font-head text-[26px] md:text-[32px] mb-2.5">{COMMUNITY_TITLE}</h3>
+      <p class="text-stone mb-[22px] max-w-[26rem]">{COMMUNITY_TEXT}</p>
+      <a href="#news" class="inline-block bg-danger text-white font-head text-sm font-medium rounded-btn px-8 py-3 hover:bg-ember">Offer Seva</a>
+    </div>
+  </div>
+</section>

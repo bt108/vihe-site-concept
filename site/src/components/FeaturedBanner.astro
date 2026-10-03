@@ -1,0 +1,25 @@
+---
+interface Props {
+  FEATURED_TITLE?: string;
+  FEATURED_SUB?: string;
+  FEATURED_TEXT?: string;
+  FEATURED_CTA?: string;
+}
+
+const {
+  FEATURED_TITLE = 'Admissions Open — Winter 2025–26',
+  FEATURED_SUB = 'On-site in Vrindavan & Online',
+  FEATURED_TEXT = 'Study Bhakti-sastri, Bhakti-vaibhava and more this winter semester — or join the Vedic Cosmology intensive with Pavanesvara Dasa, Feb 4–7, 2026.',
+  FEATURED_CTA = 'Apply Now',
+} = Astro.props;
+---
+<section class="bg-mist px-[15px] md:px-10 lg:px-[100px] py-[75px]">
+  <div class="max-w-[1400px] mx-auto bg-pine rounded-[20px] px-6 py-8 md:p-14">
+    <div class="bg-surface rounded-card p-6 md:p-11 max-w-[640px] border-t-4 border-gold">
+      <h2 class="font-head font-semibold text-ink text-[24px] md:text-[32px] lg:text-[36px] mb-1.5">{FEATURED_TITLE}</h2>
+      <div class="text-accent font-bold mb-3">{FEATURED_SUB}</div>
+      <p class="text-body mb-[22px]">{FEATURED_TEXT}</p>
+      <a href="#courses" class="btn-solid inline-block">{FEATURED_CTA}</a>
+    </div>
+  </div>
+</section>

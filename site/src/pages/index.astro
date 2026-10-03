@@ -1,0 +1,49 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import TaglineStrip from '../components/TaglineStrip.astro';
+import Articles from '../components/Articles.astro';
+import FeaturedBanner from '../components/FeaturedBanner.astro';
+import Courses from '../components/Courses.astro';
+import LiveClasses from '../components/LiveClasses.astro';
+import Books from '../components/Books.astro';
+import About from '../components/About.astro';
+import News from '../components/News.astro';
+import CtaBanners from '../components/CtaBanners.astro';
+import SocialStrip from '../components/SocialStrip.astro';
+import Footer from '../components/Footer.astro';
+import { org } from '../config/org';
+---
+<Base BRAND_NAME={org.name} HERO_TITLE={org.hero.title} HERO_SUB={org.hero.sub}>
+  <Header BRAND_NAME={org.shortName} LOGO_MARK={org.logoMark} NAV={org.nav} />
+  <Hero HERO_TITLE={org.hero.title} HERO_SUB={org.hero.sub} HERO_CTAS={org.hero.ctas} />
+  <TaglineStrip TAGLINE={org.tagline} TAGLINE_SUB={org.taglineSub} />
+  <Articles />
+  <FeaturedBanner />
+  <Courses
+    COURSES_LABEL={org.coursesHeader.label}
+    COURSES_TITLE={org.coursesHeader.title}
+    COURSES_SUB={org.coursesHeader.sub}
+    COURSES={org.courses}
+  />
+  <LiveClasses />
+  <Books />
+  <About />
+  <News
+    NEWS_LABEL={org.sevaHeader.label}
+    NEWS_TITLE={org.sevaHeader.title}
+    NEWS_SUB={org.sevaHeader.sub}
+    SEVA_COLUMNS={org.sevaColumns}
+  />
+  <CtaBanners />
+  <SocialStrip />
+  <Footer
+    BRAND_NAME={org.name}
+    FOOTER_NOTE={org.footerNote}
+    CONTACT_EMAIL={org.contact.email}
+    CONTACT_EMAIL_HREF={org.contact.emailHref}
+    CONTACT_PHONES={org.contact.phones}
+    YEAR={org.year}
+  />
+</Base>
