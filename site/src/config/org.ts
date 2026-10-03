@@ -63,7 +63,7 @@ export interface OrgConfig {
   retreatsHeader: { label: string; title: string; sub: string };
   resourcesHeader: { label: string; title: string; sub: string };
   sevaHeader: { label: string; title: string; sub: string };
-  sevaColumns: [OrgSevaColumn, OrgSevaColumn, OrgSevaColumn];
+  sevaColumns: [OrgSevaColumn, OrgSevaColumn];
   footerNote: string;
   year: string;
   palette: OrgPalette;
@@ -193,10 +193,10 @@ export const org: OrgConfig = {
     {
       heading: 'Service Opportunities',
       links: [
-        { label: 'Prasadam & kitchen seva', href: '#news' },
-        { label: 'Guest care & reception', href: '#news' },
-        { label: 'Gardening & goshala', href: '#news' },
-        { label: 'Media & translations', href: '#news' },
+        { label: 'Prasadam & kitchen seva', href: '#contact' },
+        { label: 'Guest care & reception', href: '#contact' },
+        { label: 'Gardening & goshala', href: '#contact' },
+        { label: 'Media & translations', href: '#contact' },
       ],
     },
     {
@@ -206,15 +206,6 @@ export const org: OrgConfig = {
         { label: 'Write to courses@vihe.org', href: 'mailto:courses@vihe.org' },
         { label: 'Call +91 72595 26797', href: 'tel:+917259526797' },
         { label: 'Visit us in Vrindavan', href: '#contact' },
-      ],
-    },
-    {
-      heading: 'Announcements',
-      links: [
-        { label: 'Winter 2025–26 admissions open', href: '#courses' },
-        { label: 'Vedic Cosmology, Feb 4–7 2026', href: '#courses' },
-        { label: 'Caturmasya 2026 calendar', href: '#courses' },
-        { label: 'New study materials out now', href: '#courses' },
       ],
     },
   ],
