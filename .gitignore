@@ -9,3 +9,6 @@ dist/
 npm-debug.log*
 *.log
 .DS_Store
+
+# local-only reference scrap (third-party mirrors, brand sources)
+other-files/
