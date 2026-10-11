@@ -85,8 +85,9 @@ export const org: OrgConfig = {
     { label: 'Contact', href: '#contact' },
   ],
   hero: {
-    // Per-org re-skins swap this path (file lives in public/assets/).
-    image: '/assets/hero.jpg',
+    // Per-org re-skins swap the asset path (file lives in public/assets).
+    // Prefixed with the deploy base so project-page hosting resolves.
+    image: import.meta.env.BASE_URL + 'assets/hero.jpg',
     title: 'Welcome to Vrindavan Institute for Higher Education',
     sub: 'Established in 1987 in Sri Vrindavan Dhama, VIHE offers systematic study of the Gaudiya Vaisnava scriptures alongside deep sadhana and training in preaching — welcoming devotees from around the world.',
     ctas: [
