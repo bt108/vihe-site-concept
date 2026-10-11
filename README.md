@@ -11,12 +11,15 @@ demo, not the live VIHE site**.
 - Tailwind CSS 3 with a 9-token institute palette, Charis SIL typeface
 - Zero client-framework JS for content; tiny inline script for the mobile menu
 
+**Live demo:** `https://bt108.github.io/vihe-site-concept/`
+(deployed from `master` via the GitHub Actions workflow)
+
 ## Run
 
 ```sh
 cd site
 npm install
-npm run dev      # local preview
+npm run dev      # local preview at /vihe-site-concept/ (project-pages base)
 npm run build    # static output in site/dist/
 ```
 
