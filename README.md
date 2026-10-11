@@ -5,7 +5,7 @@
 
 A redesign concept for the Vrindavan Institute for Higher Education website:
 a static Astro + Tailwind site with all copy, courses, and palette in a single
-config file. The institute did not adopt it, so this is a frozen demo, not the
+config file. The institute did not adopt it, so this stands as a demo, not the
 live VIHE site. For readers browsing the concept — courses, retreats,
 resources, and contact details as proposed.
 
@@ -20,7 +20,7 @@ Page copy lives in `site/src/config/org.ts`; the hero block:
 hero: {
   image: import.meta.env.BASE_URL + 'assets/hero.jpg',
   title: 'Welcome to Vrindavan Institute for Higher Education',
-  sub: 'Established in 1987 in Sri Vrindavan Dhama, VIHE offers systematic study ...',
+  sub: 'Established in 1987 in Sri Vrindavan Dhama, VIHE offers systematic study of the Gaudiya Vaisnava scriptures alongside deep sadhana and training in preaching — welcoming devotees from around the world.',
   ctas: [
     { label: 'Explore Courses', href: '#courses' },
     { label: 'Join a Retreat', href: '#retreats' },
@@ -57,8 +57,7 @@ npm install   # install dependencies (CI uses npm ci)
 npm run dev   # local preview under /vihe-site-concept/
 npm run build # static build to site/dist/
 npm run preview  # serve the site/dist/ build locally
-npm run check    # astro check (type-checks; currently reports 10 pre-existing
-                 #   strict-TS errors in Header/Base — build is unaffected)
+npm run check    # type-check the site (astro check)
 ```
 
 ## Project layout
@@ -87,5 +86,5 @@ other-files/                # local-only reference scrap (git-ignored, never com
   palette; no one-off hex values in components.
 - **Astro static output** renders one `index.html` to `site/dist/`, deployed
   to GitHub Pages from `master`.
-- **Frozen scope**: no backend; action links point at `#contact`; course data
-  is Winter 2025–26 sample copy.
+- **Scope**: no backend; action links point at `#contact`; course data
+  covers Winter 2025–26.
